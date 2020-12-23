@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     background: var(--light) !important;
     color: var(--primary) !important;
 }

@@ -27,7 +27,7 @@ p {
 .flex {
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 900px;
     margin: 10px auto;
     justify-content: center;
     flex-direction: row;

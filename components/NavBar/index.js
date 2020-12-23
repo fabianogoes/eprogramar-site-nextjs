@@ -24,22 +24,50 @@ import './styles.css'
 const NavBar = () => {    
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setIsOpen(!isOpen);
+    // const toggle = () => setIsOpen(!isOpen);
+
+    if (typeof window !== 'undefined') {
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".menu");
+        const links = document.querySelectorAll(".menu li");
+
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("open");
+            console.log('click...');
+        });
+
+        console.log('Menu...');
+    }
 
     return (
         <header className="header">
+
             <NavLink href="/">
-                <a>
-                    <img src="https://www.eprogramar.com.br/assets/images/e-programar-logo.png" />
-                </a>
+                <img src="https://www.eprogramar.com.br/assets/images/e-programar-logo.png" />
             </NavLink>
+
             <nav>
+                
+                <div className="hamburger">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
                 <ul className="menu">
-                    <li><NavLink href="/"><a>Home</a></NavLink></li>
-                    <li><NavLink href="/cursos"><a>Cursos</a></NavLink></li>
-                    <li><NavLink href="/youtube"><a>Youtube</a></NavLink></li>
-                    <li><NavLink href="/sobre"><a>Sobre</a></NavLink></li>
+                    <li>
+                        <NavLink href="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/cursos">Cursos</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/youtube">Youtube</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/sobre">Sobre</NavLink>
+                    </li>
                 </ul>
+
             </nav>
         </header>
     )

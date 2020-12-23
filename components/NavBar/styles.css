@@ -14,13 +14,9 @@ body, ul, li, p {
   font-family: 'Montserrat', sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: var(--white) !important;
-}
-
-a:hover {
-  color: var(--green) !important;
+nav {
+  height: 11vh;
+  background: var(--purple);
 }
 
 .header { 
@@ -28,7 +24,6 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 10px 5px 0;
 }
 
 .header img {
@@ -40,18 +35,71 @@ a:hover {
 
 .menu {
   display: flex;
-}
-
-.menu li {
-  margin-left: 0px;
-  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
 }
 
 .menu li a {
   display: block;
   padding: 5px 10px;
-  /* background: #00ff80; */
+  text-decoration: none;
+  color: var(--white) !important; 
+  font-size: 16px;
+}
+
+.menu li a:hover {
+  color: var(--green) !important;
 }
 
 
+@media screen and (max-width: 768px) {
+  
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    margin: 5px;
+    margin-right: 20px;
+  }
+  
+  nav {
+    position: relative;
+  }
 
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .menu {
+    position: fixed;
+    background: var(--purple) !important;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+  }
+
+  .menu.open {
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    pointer-events: all;
+  }
+
+  .menu li {
+    opacity: 0;
+  }
+
+  .menu li a {
+    font-size: 25px;
+  }
+}
